@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-fg7h561-6w8-2z9^k$_c2k$l(k(jsfay2k*)c_#1hublh!(xy)
 # 서버에 배포하면, static, media 경로는 프로젝트 외부 경로(서버 경로)로 설정하는 것이 올바른 방식이다.
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
