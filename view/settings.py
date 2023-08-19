@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-fg7h561-6w8-2z9^k$_c2k$l(k(jsfay2k*)c_#1hublh!(xy)
 # 서버에 배포하면, static, media 경로는 프로젝트 외부 경로(서버 경로)로 설정하는 것이 올바른 방식이다.
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# private ip주소: ubuntu에서 ip addr 명령어로 확인
+ALLOWED_HOSTS = ['172.31.43.52', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -135,12 +136,12 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # {% static '경로' %}로 사용하면 경로 앞에 /static을 붙인다.
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 # /static으로 요청이 들어오면 실제 static 경로를 찾아준다.
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static'
+# ]
 
 # 파일 접근 시
 MEDIA_URL = '/upload/'
@@ -152,3 +153,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:10000', 'http://127.0.0.1',
+    'http://localhost:10000', 'http://localhost',
+]
