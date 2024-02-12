@@ -1,0 +1,88 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'public/images/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'member/css/member.css' %}">
+    <link rel="stylesheet" href="{% static 'member/css/term.css' %}">
+    <link rel="stylesheet" href="{% static 'member/css/info.css' %}">
+    <link rel="stylesheet" href="{% static 'member/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'public/css/modal.css' %}">
+    <title>로그인</title>
+</head>
+<body>
+    <main id="login">
+        <div class="modal">
+            <div class="warn-modal">
+                <div id="content-wrap"></div>
+            </div>
+        </div>
+        <section id="login-container">
+            <div id="logo">
+                <img src="{% static 'public/images/logo.png' %}">
+            </div>
+            <article>
+                <div class="login">
+                    <h2 id="title">
+                        즐거운 Django 로그인
+                    </h2>
+                    <h5>로그인을 하면? 🤭<br>즐거운 Django의 모든 서비스를 이용할 수 있습니다.</h5>
+                </div>
+                <form action="{% url 'member:login' %}" name="login" method="post">
+                    {% csrf_token %}
+                    <div class="login">
+                        <div class="info-container info-container-first">
+                            <span>
+                                <input type="text" id="id" name="member-id" autocomplete="off" placeholder="아이디">
+                                <img width="16px">
+                            </span>
+                            <p class="help"></p>
+                        </div>
+                        <div class="info-container">
+                            <span>
+                                <div class="password">
+                                    <input type="password" id="password" name="member-password" placeholder="비밀번호">
+                                    <img width="16px">
+                                    <p class="help"></p>
+                                </div>
+                            </span>
+                        </div>
+                        <button type="button" class="login">로그인</button>
+                        <button type="button" class="join" onclick="location.href = '/member/join'">회원가입</button>
+                    </div>
+                </form>
+                <div class="oauth-wrap">
+                    <form action="{% provider_login_url 'kakao' %}" method="post">
+                        {% csrf_token %}
+                        <button>
+                          <img src="{% static 'public/images/kakao-login.png' %}" alt="" width="275px">
+                        </button>
+                    </form>
+                    <form action="{% provider_login_url 'google' %}" method="post">
+                        {% csrf_token %}
+                        <button>
+                          <img src="{% static 'public/images/google-login.png' %}" alt="" width="40px">
+                        </button>
+                    </form>
+                    <form action="{% provider_login_url 'naver' %}" method="post">
+                        {% csrf_token %}
+                        <button>
+                          <img src="{% static 'public/images/naver-login.png' %}" alt="" width="40px">
+                        </button>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
+<script>const check = "{{ check }}"</script>
+<script src="{% static 'public/js/modal.js' %}"></script>
+<script src="{% static 'member/js/login.js' %}"></script>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<header>
+    <div id="header">
+        <div id="logo">
+            <img src="{% static 'public/images/logo.png' %}">
+        </div>
+        <div id="search">
+            <div class="search-wrap">
+                <form action="" name="search-form">
+                    <div>
+                        <select name="type">
+                            <option value="">전체</option>
+                            <option value="">제목</option>
+                            <option value="">내용</option>
+                            <option value="">작성자</option>
+                            <option value="">내용 또는 작성자</option>
+                        </select>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" autocomplete="off" name="keyword" value="">
+                        <button type="submit" onclick=""><img src="{% static 'public/images/search.png' %}"
+                                width="20px"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="category">
+            <div class="profile" onclick="location.href=`{% url 'member:mypage' %}`">
+                {% if request.session.profile %}
+                    <img src="/upload/{{ request.session.profile }}" width="30">
+                {% else %}
+                    <img src="{% static 'public/images/default-profile.png' %}" width="30">
+                {% endif %}
+            </div>
+            <div>
+                <a href="/accounts/logout">로그아웃</a>
+            </div>
+        </div>
+    </div>
+</header>
