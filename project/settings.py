@@ -201,7 +201,7 @@ STATIC_URL = 'static/'
 
 # 여러 디렉토리로 나눠진 static 파일들을 해당 경로의 디렉토리로 복사
 # 배포할 때에만 사용, python manage.py collectstatic
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 파일 접근 시
 MEDIA_URL = 'upload/'
