@@ -55,26 +55,26 @@
                         <button type="button" class="join" onclick="location.href = '/member/join'">회원가입</button>
                     </div>
                 </form>
-{#                <div class="oauth-wrap">#}
-{#                    <form action="{% provider_login_url 'kakao' %}" method="post">#}
-{#                        {% csrf_token %}#}
-{#                        <button>#}
-{#                          <img src="{% static 'public/images/kakao-login.png' %}" alt="" width="275px">#}
-{#                        </button>#}
-{#                    </form>#}
-{#                    <form action="{% provider_login_url 'google' %}" method="post">#}
-{#                        {% csrf_token %}#}
-{#                        <button>#}
-{#                          <img src="{% static 'public/images/google-login.png' %}" alt="" width="40px">#}
-{#                        </button>#}
-{#                    </form>#}
-{#                    <form action="{% provider_login_url 'naver' %}" method="post">#}
-{#                        {% csrf_token %}#}
-{#                        <button>#}
-{#                          <img src="{% static 'public/images/naver-login.png' %}" alt="" width="40px">#}
-{#                        </button>#}
-{#                    </form>#}
-{#                </div>#}
+                <div class="oauth-wrap">
+                    <form action="{% provider_login_url 'kakao' %}" method="post">
+                        {% csrf_token %}
+                        <button>
+                          <img src="{% static 'public/images/kakao-login.png' %}" alt="" width="275px">
+                        </button>
+                    </form>
+                    <form action="{% provider_login_url 'google' %}" method="post">
+                        {% csrf_token %}
+                        <button>
+                          <img src="{% static 'public/images/google-login.png' %}" alt="" width="40px">
+                        </button>
+                    </form>
+                    <form action="{% provider_login_url 'naver' %}" method="post">
+                        {% csrf_token %}
+                        <button>
+                          <img src="{% static 'public/images/naver-login.png' %}" alt="" width="40px">
+                        </button>
+                    </form>
+                </div>
             </article>
         </section>
     </main>
