@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-uefabur&*dwvqk-!18e5oys&vol$tf_jzspkji*1mk^r%8+046'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '43.201.251.247']
 
@@ -204,7 +204,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 파일 접근 시
-MEDIA_URL = '/upload/'
+MEDIA_URL = 'upload/'
 
 # 파일 업로드 시
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
