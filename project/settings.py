@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'django_user_agents',
     'rest_framework',
 ]
-SITE_ID = 5
+# select * from socialaccount_socialapp_sites;
+SITE_ID = 6
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGOUT_ON_GET = True
